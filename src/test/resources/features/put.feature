@@ -3,6 +3,8 @@ Feature: Update using PUT with updated name
 Background:
   * def data = read('classpath:features/testdata.json')
   * def putProduct = data.putProduct3
+  * configure headers = { 'User-Agent': 'KarateTestRunner', 'Content-Type': 'application/json' }
+
 @put
 Scenario: Update object name using PUT request
   Given url putProduct

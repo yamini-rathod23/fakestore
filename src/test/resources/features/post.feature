@@ -3,6 +3,8 @@ Feature: To create a new object via POST request
 Background:
   * def data = read('classpath:features/testdata.json')
   * def postProduct = data.postProduct
+  * configure headers = { 'User-Agent': 'KarateTestRunner', 'Content-Type': 'application/json' }
+
 
 @post
 Scenario: create new record

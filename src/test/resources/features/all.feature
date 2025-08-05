@@ -4,6 +4,8 @@ Feature: Product CRUD API Testing
 Background:
   * def data = read('classpath:features/testdata.json')
   * def baseUrl = data.postProduct
+  * configure headers = { 'User-Agent': 'KarateTestRunner', 'Content-Type': 'application/json' }
+
 
 Scenario Outline: Create, Update, and Validate Product Details
 

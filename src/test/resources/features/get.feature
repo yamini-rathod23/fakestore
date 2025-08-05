@@ -4,6 +4,8 @@ Background:
   * def data = read('classpath:features/testdata.json')
   * def getAllProducts = data.getAllProducts
   * def getProductById3 = data.getProductById3
+  * configure headers = { 'User-Agent': 'KarateTestRunner', 'Content-Type': 'application/json' }
+
 
 @get @getAll
 Scenario: Get all products
