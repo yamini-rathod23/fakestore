@@ -1,4 +1,4 @@
-Feature: Test get(GET)  endpoints using JSON data
+Feature: Test GET  endpoints using JSON data
 
 Background:
   * def data = read('classpath:features/testdata.json')
