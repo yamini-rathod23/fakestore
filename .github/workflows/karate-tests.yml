@@ -1,0 +1,53 @@
+name: FakeStore API Test Workflow
+ 
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/test/resources/features/**'
+      - 'src/test/java/TestRunner.java'
+      - 'pom.xml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/test/resources/features/**'
+      - 'src/test/java/TestRunner.java'
+      - 'pom.xml'
+ 
+jobs:
+  run-api-tests:
+    name: 🚀 Run API Tests
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: ☕ Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+ 
+      - name: 💾 Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven
+ 
+      - name: 📂 Navigate to project folder
+        run: cd FakeStoreAPI
+ 
+      - name: 🚀 Run API Tests using Maven
+        run: |
+          cd FakeStoreAPI
+          mvn test
+ 
+      - name: 📤 Upload Karate HTML reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: karate-reports
+          path: FakeStoreAPI/target/karate-reports

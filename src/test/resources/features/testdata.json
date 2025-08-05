@@ -1,0 +1,7 @@
+{
+  "getAllProducts": "https://fakestoreapi.com/products",
+  "getProductById3": "https://fakestoreapi.com/products/3",
+  "postProduct": "https://fakestoreapi.com/products",
+  "putProduct3": "https://fakestoreapi.com/products/3",
+  "patchProduct3": "https://fakestoreapi.com/products/3"
+}

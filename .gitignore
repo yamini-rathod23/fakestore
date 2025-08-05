@@ -1,0 +1,39 @@
+# Java
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# Maven
+target/
+dependency-reduced-pom.xml
+buildNumber.properties
+release.properties
+
+# VS Code
+.vscode/
+
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Karate reports
+karate-reports/
+karate-output/
+
+# Test data if sensitive (optional, remove if you want to keep JSON in repo)
+# src/test/resources/features/testdata.json
+
+# Environment config (optional)
+.env
+
+# Karate HTML report artifacts
+*.html
+
+# Git
+.git/
