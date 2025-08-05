@@ -23,7 +23,7 @@ Scenario: create new record
   }
   """
   When method post
-  Then status 200
+  Then status 201
   And match response.title == 'Naga Dragon Bracelet'
   And match response.id == '#number'
   * def objectId = response.id

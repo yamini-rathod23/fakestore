@@ -20,7 +20,7 @@ Scenario Outline: Create, Update, and Validate Product Details
   }
   """
   When method post
-  Then status 200
+  Then status 201
   * def objectId = response.id
   * print 'Created ID:', objectId
   * print 'Create Response:', response
